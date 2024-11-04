@@ -13,7 +13,7 @@ export default function HotelDetails() {
     toDate,
     adults = 1,
     rooms = 1,
-  } = location.state || {}; // Add defaults if missing
+  } = location.state || {};
 
   const [hotelDetails, setHotelDetails] = useState(null);
   const [priceDetails, setPriceDetails] = useState(null);

@@ -1,6 +1,5 @@
 import React from "react";
 
-// export default function FlightCard(){
 export default function FlightCard({
   flightNumber,
   origin,

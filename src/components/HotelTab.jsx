@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HotelCard from "./HotelCard";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { fetchHotelParameters, fetchHotels } from "./hotelApi";
 import { fetchHotelParameters } from "../../api/fetchHotelParameters";
 import { fetchHotels } from "../../api/fetchHotels";
 
@@ -10,16 +9,15 @@ export default function HotelTab() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Extract initial states from location or use defaults
+  // Extracting initial states from location
   const {
     destination: initialDestination,
     fromDate: initialFromDate,
     toDate: initialToDate,
   } = location.state || {};
 
-  // State variables
   const [hotels, setHotels] = useState([]);
-  const [hotelId, setHotelId] = useState(null); // State for hotelId
+  const [hotelId, setHotelId] = useState(null); 
   const [entityId, setEntityId] = useState("");
   const [loading, setLoading] = useState(true);
   const [destination, setDestination] = useState(initialDestination || "");
@@ -52,8 +50,8 @@ export default function HotelTab() {
 
   // Function to handle search button click
   const handleSearch = () => {
-    setEntityId(""); // Reset entityId to trigger fetch
-    fetchHotelParameters(destination); // Refetch hotel parameters based on updated input
+    setEntityId(""); 
+    fetchHotelParameters(destination); 
   };
 
   return (

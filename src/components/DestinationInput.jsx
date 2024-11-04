@@ -25,7 +25,6 @@ export default function DestinationInput({
         className="w-full border border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all"
         value={destination }
         onChange={handleDestinationChange}
-        // onChange={(e) => setDestination(e.target.value)}
         required
       />
       {/* Suggestion List */}

@@ -37,7 +37,6 @@ export default function SearchResults() {
 
   return (
     <div className="container mx-auto p-4 mt-8 flex flex-col items-center">
-      {/* Back to Home Arrow Button */}
       <button
         onClick={() => navigate("/")}
         className="absolute top-4 left-4 bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200"
@@ -65,7 +64,6 @@ export default function SearchResults() {
         </ul>
       </div>
 
-      {/* Render Tab Content */}
       {renderTabContent()}
     </div>
   );

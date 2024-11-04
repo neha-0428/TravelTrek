@@ -12,9 +12,9 @@ export default function NavBar() {
           <ul className="list-none flex flex-row space-x-8">
             <li>
               <Link
-                to="home" // Adjust based on your section ID
-                smooth={true} // Enable smooth scrolling
-                duration={500} // Duration of the scroll in milliseconds
+                to="home" 
+                smooth={true} 
+                duration={500} 
                 className="text-black text-lg font-medium transition duration-200 hover:text-blue-800 cursor-pointer"
               >
                 Home
@@ -22,7 +22,7 @@ export default function NavBar() {
             </li>
             <li>
               <Link
-                to="about" // Adjust based on your section ID
+                to="about" 
                 smooth={true}
                 duration={500}
                 className="text-black text-lg font-medium transition duration-200 hover:text-blue-800 cursor-pointer"
@@ -32,7 +32,7 @@ export default function NavBar() {
             </li>
             <li>
               <Link
-                to="contact" // Adjust based on your section ID
+                to="contact" 
                 smooth={true}
                 duration={500}
                 className="text-black text-lg font-medium transition duration-200 hover:text-blue-800 cursor-pointer"

@@ -5,7 +5,7 @@ import { fetchFlightParameters } from "../../api/fetchFlightParameters";
 import { fetchFlightDetails } from "../../api/fetchFlightDetails";
 
 export default function FlightTab() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY; // Use environment variable for API key
+  const apiKey = import.meta.env.VITE_CITY_API_KEY;
   const location = useLocation();
 
   const { destination: initialDestination, fromDate: initialFromDate } =
@@ -112,7 +112,7 @@ export default function FlightTab() {
         </div>
         <button
           onClick={() => {
-            /* Optionally handle search manually */
+            
           }}
           disabled={loading || !originSkyId || !destinationSkyId || !fromDate}
           className="bg-blue-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-400 transition-all"

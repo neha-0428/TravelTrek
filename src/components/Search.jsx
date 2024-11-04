@@ -5,7 +5,7 @@ import DestinationInput from "./DestinationInput";
 import DateInput from "./DateInput";
 
 export default function Search() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY; // Corrected environment variable key
+  const apiKey = import.meta.env.VITE_CITY_API_KEY; 
   const [destination, setDestination] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -22,7 +22,6 @@ export default function Search() {
     };
   };
 
-  // Fetch suggestions with debouncing and error handling
   const fetchSuggestions = async (query) => {
     if (query.length >= 3) {
       try {
@@ -32,7 +31,7 @@ export default function Search() {
         console.error("Error fetching suggestions:", error);
       }
     } else {
-      setSuggestions([]); // Clear suggestions if query length is less than 3
+      setSuggestions([]); 
     }
   };
 
@@ -46,7 +45,7 @@ export default function Search() {
     setDestination(value);
 
     if (value === "") {
-      setSuggestions([]); // Clear suggestions if input is empty
+      setSuggestions([]); 
     } else {
       fetchSuggestionsDebounced(value);
     }
@@ -71,7 +70,6 @@ export default function Search() {
       >
         <div className="flex-1 min-w-[200px]">
           {" "}
-          {/* Ensure inputs have minimum width */}
           <DestinationInput
             destination={destination}
             setDestination={setDestination}
@@ -83,12 +81,11 @@ export default function Search() {
         </div>
         <div className="flex-1 min-w-[150px]">
           {" "}
-          {/* Ensure inputs have minimum width */}
+          
           <DateInput label="From" date={fromDate} setDate={setFromDate} />
         </div>
         <div className="flex-1 min-w-[150px]">
           {" "}
-          {/* Ensure inputs have minimum width */}
           <DateInput label="To" date={toDate} setDate={setToDate} />
         </div>
         <button className="bg-blue-600 text-white text-lg font-semibold py-3 px-6 rounded-lg hover:bg-blue-500 transition-transform transform hover:scale-105 shadow-lg">

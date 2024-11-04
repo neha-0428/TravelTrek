@@ -3,16 +3,14 @@ import NavBar from "./NavBar";
 import Search from "./Search";
 import About from "./About";
 import Contact from "./Contact";
-import bgImage from "../assets/bg1.jpg"; // Correct the path if needed
+import bgImage from "../assets/bg1.jpg";
 import Popular from "./Popular";
 
 export default function Home() {
   return (
     <div>
-      {/* Sticky Navbar at the top with higher z-index */}
       <NavBar className="sticky top-0 z-20" />
 
-      {/* Full-screen search section */}
       <section
         id="home"
         className="relative bg-cover bg-center h-screen flex flex-col justify-center items-center"

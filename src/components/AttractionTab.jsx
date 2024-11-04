@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import AttractionCard from "./AttractionCard";
-import { fetchAttractions as fetchAttractionsApi } from "../../api/fetchAttractions"; // Rename imported function
-import _ from "lodash"; // Import lodash for debouncing
+import { fetchAttractions as fetchAttractionsApi } from "../../api/fetchAttractions"; 
+import _ from "lodash";
 
 export default function AttractionTab({ locationId, fromDate, toDate }) {
   const [attractions, setAttractions] = useState([]);
-  const [loading, setLoading] = useState(true); // New loading state
+  const [loading, setLoading] = useState(true);
   const apiKey = import.meta.env.VITE_CITY_API_KEY;
 
   // Debounced fetchAttractions function
@@ -13,7 +13,7 @@ export default function AttractionTab({ locationId, fromDate, toDate }) {
     _.debounce(async () => {
       if (!locationId) return;
 
-      setLoading(true); // Start loading when fetch begins
+      setLoading(true);
       try {
         const results = await fetchAttractionsApi(
           locationId,
@@ -25,10 +25,10 @@ export default function AttractionTab({ locationId, fromDate, toDate }) {
       } catch (error) {
         console.error("Error fetching attractions:", error);
       } finally {
-        setLoading(false); // Stop loading once fetch completes
+        setLoading(false); 
       }
-    }, 500), // Debounce delay of 500ms
-    [locationId, fromDate, toDate, apiKey] // Ensure apiKey is included in the dependencies
+    }, 500),
+    [locationId, fromDate, toDate, apiKey]
   );
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function AttractionTab({ locationId, fromDate, toDate }) {
     <section>
       <h3 className="text-lg font-semibold mb-2">Attractions</h3>
       {loading ? (
-        <p>Loading...</p> // Show loading text while fetching data
+        <p>Loading...</p> 
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {attractions.length > 0 ? (
@@ -58,7 +58,7 @@ export default function AttractionTab({ locationId, fromDate, toDate }) {
               />
             ))
           ) : (
-            <p>No attractions found</p> // Show message if no attractions are fetched
+            <p>No attractions found</p>
           )}
         </div>
       )}

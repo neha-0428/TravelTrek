@@ -49,7 +49,7 @@ export default function Popular() {
   const defaultToDate = new Date();
   defaultToDate.setDate(defaultFromDate.getDate() + 3); // Default to 3 days later
 
-  // Format dates to YYYY-MM-DD
+  // Formating dates to YYYY-MM-DD
   const formattedFromDate = defaultFromDate.toISOString().split("T")[0];
   const formattedToDate = defaultToDate.toISOString().split("T")[0];
 
@@ -75,7 +75,7 @@ export default function Popular() {
           <div
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transition-all transform hover:scale-105 hover:shadow-2xl"
-            onClick={() => handleDestinationClick(dest.name, dest.locationId)} // Pass locationId here
+            onClick={() => handleDestinationClick(dest.name, dest.locationId)} 
           >
             <img
               src={dest.image}
