@@ -60,7 +60,7 @@ export default function Search() {
   };
 
   return (
-    <div className="relative z-20 w-3/4 max-w-8xl bg-white bg-opacity-90 p-8 rounded-lg shadow-2xl backdrop-blur-lg">
+    <div className="relative z-20 w-11/12 max-w-3xl bg-white bg-opacity-90 p-8 rounded-lg shadow-2xl backdrop-blur-lg mx-auto">
       <h1 className="text-center text-4xl font-bold mb-6 text-gray-800">
         Plan Your Perfect Trip
       </h1>
@@ -69,17 +69,29 @@ export default function Search() {
         onSubmit={getResults}
         className="flex flex-col md:flex-row gap-4 items-center justify-center"
       >
-        <DestinationInput
-          destination={destination}
-          setDestination={setDestination}
-          setLocationId={setLocationId}
-          suggestions={suggestions}
-          setSuggestions={setSuggestions}
-          handleDestinationChange={handleDestinationChange}
-        />
-        <DateInput label="From" date={fromDate} setDate={setFromDate} />
-        <DateInput label="To" date={toDate} setDate={setToDate} />
-        <button className="bg-blue-600 text-white text-lg font-semibold py-3 px-8 rounded-lg hover:bg-blue-500 transition-transform transform hover:scale-105 shadow-lg">
+        <div className="flex-1 min-w-[200px]">
+          {" "}
+          {/* Ensure inputs have minimum width */}
+          <DestinationInput
+            destination={destination}
+            setDestination={setDestination}
+            setLocationId={setLocationId}
+            suggestions={suggestions}
+            setSuggestions={setSuggestions}
+            handleDestinationChange={handleDestinationChange}
+          />
+        </div>
+        <div className="flex-1 min-w-[150px]">
+          {" "}
+          {/* Ensure inputs have minimum width */}
+          <DateInput label="From" date={fromDate} setDate={setFromDate} />
+        </div>
+        <div className="flex-1 min-w-[150px]">
+          {" "}
+          {/* Ensure inputs have minimum width */}
+          <DateInput label="To" date={toDate} setDate={setToDate} />
+        </div>
+        <button className="bg-blue-600 text-white text-lg font-semibold py-3 px-6 rounded-lg hover:bg-blue-500 transition-transform transform hover:scale-105 shadow-lg">
           Search
         </button>
       </form>

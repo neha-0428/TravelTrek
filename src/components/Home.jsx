@@ -13,7 +13,8 @@ export default function Home() {
       <NavBar className="sticky top-0 z-20" />
 
       {/* Full-screen search section */}
-      <section id="home"
+      <section
+        id="home"
         className="relative bg-cover bg-center h-screen flex flex-col justify-center items-center"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
