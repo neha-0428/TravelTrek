@@ -29,3 +29,7 @@ export const apiClient = async (url, options = {}, dummyData) => {
 
   return await response.json();
 };
+
+export const getApiKey = () => {
+  return import.meta.env.VITE_CITY_API_KEY;
+};
