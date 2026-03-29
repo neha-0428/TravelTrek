@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchHotelDetails } from "../../api/fetchHotelDetails";
 import { fetchHotelPrices } from "../../api/fetchHotelPrices";
+import { getApiKey } from "../../api/apiClient";
 
 export default function HotelDetails() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY;
+  const apiKey = getApiKey();
   const location = useLocation();
   const {
     hotelId,

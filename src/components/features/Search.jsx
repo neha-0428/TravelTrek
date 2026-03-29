@@ -1,11 +1,12 @@
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router";
 import { fetchCitySuggestions } from "../../api/fetchCitySuggestions";
-import DestinationInput from "./DestinationInput";
-import DateInput from "./DateInput";
+import { getApiKey } from "../../api/apiClient";
+import DestinationInput from "../common/DestinationInput";
+import DateInput from "../common/DateInput";
 
 export default function Search() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY; 
+  const apiKey = getApiKey(); 
   const [destination, setDestination] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -66,7 +67,7 @@ export default function Search() {
 
       <form
         onSubmit={getResults}
-        className="flex flex-col md:flex-row gap-4 items-center justify-center"
+        className="flex flex-col md:flex-row gap-4 lg:items-end justify-center"
       >
         <div className="flex-1 min-w-[200px]">
           {" "}

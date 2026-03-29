@@ -1,13 +1,13 @@
 import './App.css'
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import SearchResults from './components/SearchResult';
-import AttractionCard from './components/AttractionCard';
-import FlightCard from './components/FlightCard';
-import HotelCard from './components/HotelCard';
-import HotelDetails from './components/HotelDetails';
-import Popular from './components/Popular';
+import Home from './components/features/Home';
+import About from './components/features/About';
+import Contact from './components/features/Contact';
+import SearchResults from './components/features/SearchResult';
+import AttractionCard from './components/common/AttractionCard';
+import FlightCard from './components/common/FlightCard';
+import HotelCard from './components/common/HotelCard';
+import HotelDetails from './components/features/HotelDetails';
+import Popular from './components/features/Popular';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {

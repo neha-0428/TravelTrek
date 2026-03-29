@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import FlightCard from "./FlightCard";
+import FlightCard from "../common/FlightCard";
 import { useLocation } from "react-router-dom";
 import { fetchFlightParameters } from "../../api/fetchFlightParameters";
 import { fetchFlightDetails } from "../../api/fetchFlightDetails";
+import { getApiKey } from "../../api/apiClient";
 
 export default function FlightTab() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY;
+  const apiKey = getApiKey();
   const location = useLocation();
 
   const { destination: initialDestination, fromDate: initialFromDate } =

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import HotelCard from "./HotelCard";
+import HotelCard from "../common/HotelCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { fetchHotelParameters } from "../../api/fetchHotelParameters";
 import { fetchHotels } from "../../api/fetchHotels";
+import { getApiKey } from "../../api/apiClient";
 
 export default function HotelTab() {
-  const apiKey = import.meta.env.VITE_CITY_API_KEY;
+  const apiKey = getApiKey();
   const navigate = useNavigate();
   const location = useLocation();
 

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
-import AttractionCard from "./AttractionCard";
+import AttractionCard from "../common/AttractionCard";
 import { fetchAttractions as fetchAttractionsApi } from "../../api/fetchAttractions"; 
+import { getApiKey } from "../../api/apiClient";
 import _ from "lodash";
 
 export default function AttractionTab({ locationId, fromDate, toDate }) {
   const [attractions, setAttractions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const apiKey = import.meta.env.VITE_CITY_API_KEY;
+  const apiKey = getApiKey();
 
   // Debounced fetchAttractions function
   const fetchAttractionsDebounced = useCallback(
@@ -47,16 +48,19 @@ export default function AttractionTab({ locationId, fromDate, toDate }) {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {attractions.length > 0 ? (
-            attractions.map((attraction) => (
-              <AttractionCard
-                key={attraction.saveId.id}
-                title={attraction.cardTitle.string}
-                description={attraction.primaryInfo.text}
-                rating={attraction.bubbleRating.rating}
-                reviews={attraction.bubbleRating.numberReviews.string}
-                sizes={attraction.cardPhoto.sizes}
-              />
-            ))
+            attractions.map((attraction) => {
+              console.log(attraction);
+              return (
+                <AttractionCard
+                  key={attraction.saveId.id}
+                  title={attraction.cardTitle.string}
+                  description={attraction.primaryInfo.text}
+                  rating={attraction.bubbleRating.rating}
+                  reviews={attraction.bubbleRating.numberReviews.string}
+                  sizes={attraction.cardPhoto.sizes}
+                />
+              );
+            })
           ) : (
             <p>No attractions found</p>
           )}
