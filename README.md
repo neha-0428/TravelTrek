@@ -29,3 +29,7 @@ TravelTrek is a comprehensive travel planning website that helps users discover 
 1. Clone the repository:
    ```bash
    git clone https://github.com/neha-0428/TravelTrek.git
+
+2. npm install
+
+3. npm run dev
